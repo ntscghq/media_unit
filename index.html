@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NTSC MEDIA UNITS</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZmK9OlkOA72w+o+2yOq55WWLwNGmvvx4Um1vskeMj0YkrT+v4+1p"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <header>
+    <div class="head">
+      <img src="/ntsc_logo.png" alt="Church Logo">
+      <h3>NEW TEMPLE SPIRITUAL C&S CHURCH <br>
+        <span>5, Banire Close, Off Fafolu, Mushin, Lagos Nigeria</span>
+      </h3>
+    </div>
+  </header>
+
+  <main>
+    <section class="main-section">
+      <img class="logo" src="camera.png" alt="Media Logo">
+      <h1><strong>NTSC MEDIA DEPARTMENT</strong></h1>
+      <p>Welcome to the NTSC Media Units page. We are a team dedicated to utilizing and sacrificing our skills and passion for God’s glory.</p>
+      <p>To join our team, kindly fill the form below.</p>
+    </section>
+
+    <!-- FIXED: Added the missing > — this stops instant submission! -->
+    <form id="mediaForm" novalidate autocomplete="off">
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required autocomplete="name">
+
+      <label for="phone">Phone Number (WhatsApp)</label>
+      <input type="tel" id="phone" name="phone" required autocomplete="tel">
+
+      <label for="address">House Address</label>
+      <input type="text" id="address" name="address" required autocomplete="street-address">
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required autocomplete="email">
+
+      <label>Select Your Skill Set(s):</label>
+
+      <div class="skillset-scroll-container" aria-label="Available media skills">
+
+        <!-- None Option -->
+        <div class="skillset-item none-skill">
+          <label>
+            <input type="checkbox" id="skill-none" name="skill" value="none">
+            None
+          </label>
+        </div>
+
+        <!-- All Skills -->
+        <div class="skillset-item">
+          <label><input type="checkbox" name="skill" value="graphic-design"> Graphic Design (Flyers, Banners, Digital)</label>
+        </div>
+        <div class="skillset-item">
+          <label><input type="checkbox" name="skill" value="video-editing"> Video Editing & Motion Graphics</label>
+        </div>
+        <div class="skillset-item">
+          <label><input type="checkbox" name="skill" value="photography"> Photography</label>
+        </div>
+        <div class="skillset-item">
+          <label><input type="checkbox" name="skill" value="videography"> Videography / Camera Operation</label>
+        </div>
+        <div class="skillset-item">
+          <label><input type="checkbox" name="skill" value="social-media-management"> Social Media Management & Posting</label>
+        </div>
+        <div class="skillset-item">
+          <label><input type="checkbox" name="skill" value="content-creation"> Content Creation (Writing, Scripting, Reels)</label>
+        </div>
+        <div class="skillset-item">
+          <label><input type="checkbox" name="skill" value="audio-production"> Audio Production & Sound Mixing</label>
+        </div>
+        <div class="skillset-item">
+          <label><input type="checkbox" name="skill" value="music-production"> Music Production / Choir Recording</label>
+        </div>
+        <div class="skillset-item">
+          <label><input type="checkbox" name="skill" value="web-development"> Web Development & Maintenance</label>
+        </div>
+        <div class="skillset-item">
+          <label><input type="checkbox" name="skill" value="live-streaming"> Live Streaming & Broadcast Setup</label>
+        </div>
+        <div class="skillset-item">
+          <label><input type="checkbox" name="skill" value="projection-ops"> Projector / Screen / Lyrics Operation</label>
+        </div>
+        <div class="skillset-item">
+          <label><input type="checkbox" name="skill" value="lighting"> Church Lighting Control</label>
+        </div>
+        <div class="skillset-item">
+          <label><input type="checkbox" name="skill" value="technical-support"> Technical Support & Troubleshooting</label>
+        </div>
+
+        <!-- Other Skill -->
+        <div class="skillset-item custom-skill-item">
+          <label class="custom-skill-label">
+            <input type="checkbox" id="skill-other" name="skill" value="other">
+            Other Skill (Please Specify)
+          </label>
+          <input type="text"
+                 id="custom-skill-input"
+                 name="custom_skill_text"
+                 placeholder="e.g., Drone Videography, Animation, Stage Management">
+        </div>
+
+      </div>
+
+      <button type="submit">Submit Application</button>
+    </form>
+
+    <!-- Modals -->
+    <div class="modal-overlay"></div>
+
+    <div class="submitting-modal">
+      <h4>Submitting Data ...</h4>
+      <p>Please wait...</p>
+    </div>
+
+    <div class="success-modal">
+      <h4>Submitted Successfully</h4>
+      <p>Thank you for joining NTSC Media Department!<br>We’ll contact you soon via WhatsApp.</p>
+      <button type="button" class="close-success-btn">Close</button>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 New Temple Spiritual C&S Church. All rights reserved.</p>
+  </footer>
+
+  <!-- Keep your JS separate — load it here -->
+  <script src="script.js"></script>
+
+</body>
+</html>

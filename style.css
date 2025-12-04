@@ -1,0 +1,315 @@
+/* === NTSC Media Department - Final Styling === */
+
+:root {
+    --primary-blue: #004d99;
+    --accent-gold: #ffc107;
+    --success-green: #28a745;
+    --text-dark: #333333;
+    --background-light: #f9f9f9;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --sky-start: #87CEEB;
+    --sky-end: #E0F7FA;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, var(--sky-start), var(--sky-end), #ffffff, #f0f8ff);
+    background-size: 400% 400%;
+    animation: gradientShift 18s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* === Header === */
+header {
+    background: var(--primary-blue);
+    color: white;
+    padding: 18px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.head {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.head img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-gold);
+    box-shadow: 0 0 12px rgba(255,193,7,0.6);
+}
+
+.head h3 {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: var(--accent-gold);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.head h3 span {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin-top: 4px;
+}
+
+/* === Main Card === */
+main {
+    max-width: 680px;
+    margin: 40px auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px var(--shadow-light);
+}
+
+.main-section {
+    text-align: center;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+}
+
+.main-section .logo {
+   
+    height: 120px;
+    border: 5px solid var(--accent-gold);
+    box-shadow: 0 0 20px rgba(255,193,7,0.5);
+    object-fit: cover;
+}
+
+h1 {
+    color: var(--primary-blue);
+    margin: 15px 0 10px;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+/* === Form === */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 18px 0 6px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-size: 1.02rem;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 3px rgba(255,193,7,0.2);
+}
+
+/* === Skillset Area === */
+.skillset-scroll-container {
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 18px;
+    max-height: 240px;
+    overflow-y: auto;
+    background: var(--background-light);
+    margin: 20px 0;
+    transition: all 0.3s;
+}
+
+.skillset-item {
+    margin: 10px 0;
+}
+
+.skillset-item label {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 6px 0;
+    transition: color 0.2s;
+}
+
+/* Custom Checkbox */
+.skillset-item input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-blue);
+    border-radius: 5px;
+    margin-right: 12px;
+    display: grid;
+    place-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+
+.skillset-item input[type="checkbox"]::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    transform: scale(0);
+    background: var(--accent-gold);
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 60%);
+    transition: transform 0.2s ease-in-out;
+}
+
+.skillset-item input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+.skillset-item input[type="checkbox"]:checked {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+/* Muted state when "None" is selected */
+.skillset-scroll-container.muted {
+    opacity: 0.6;
+    background: #f5f5f5;
+}
+
+.skillset-scroll-container.muted .skillset-item:not(.none-skill) label {
+    pointer-events: none;
+    color: #888;
+}
+
+/* Custom Skill Input */
+#custom-skill-input {
+    margin-top: 10px;
+    padding: 12px;
+    border: 2px solid var(--accent-gold);
+    border-radius: 8px;
+    display: none;
+    font-size: 0.95rem;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    margin-top: 25px;
+    padding: 16px;
+    background: var(--success-green);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 6px 15px rgba(40,167,69,0.4);
+}
+
+button[type="submit"]:hover {
+    background: #218838;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(40,167,69,0.5);
+}
+
+button[type="submit"]:active {
+    transform: translateY(-1px);
+}
+
+/* === Modals === */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.submitting-modal,
+.success-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    z-index: 1001;
+    min-width: 300px;
+    animation: modalPop 0.4s ease-out;
+}
+
+@keyframes modalPop {
+    from { opacity: 0; transform: translate(-50%, -60%) scale(0.9); }
+    to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.success-modal {
+    background: #d4edda;
+    border: 2px solid #c3e6cb;
+    color: #155724;
+}
+
+.success-modal h4,
+.submitting-modal h4 {
+    margin: 0 0 15px;
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+}
+
+.close-success-btn {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* === Footer === */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-top: 50px;
+}
+
+/* === Responsive === */
+@media (max-width: 680px) {
+    main { margin: 20px 15px; padding: 25px; }
+    .head { flex-direction: column; text-align: center; }
+    .head img { margin-bottom: 10px; }
+    h1 { font-size: 1.7rem; }
+    .main-section .logo { width: 100px; height: 100px; }
+}
