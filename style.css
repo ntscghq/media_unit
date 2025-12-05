@@ -306,7 +306,7 @@ footer {
 }
 
 /* === Responsive === */
-@media (max-width: 680px) {
+@media (max-width: 300px) {
     main { margin: 20px 15px; padding: 25px; }
     .head { flex-direction: column; text-align: center; }
     .head img { margin-bottom: 10px; }
